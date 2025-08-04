@@ -1,7 +1,7 @@
 # pail_code
 PAIL
  # ASM code for hello world
- global _start
+global _start
 
 section .data
     hello db "Hello, World!", 10
@@ -25,7 +25,7 @@ _start:
 
 
     # Print First name and Last name
-    global _start
+global _start
 
 section .data
     firstName db "Pawan", 10
