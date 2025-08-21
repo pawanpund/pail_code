@@ -182,3 +182,103 @@ _start:
 
     mov eax, 1
     int 0x80
+
+
+#code for Implementation of Basic Arithmetic Operations on 8086 Microprocessor for 8-bit Hex
+Numbers
+
+section .data
+
+result db 0 
+
+section .bss
+section .text
+global _start 
+
+_start:
+
+mov eax, num1 4A
+mov ebx, num2 6B
+
+
+add al, bl 
+
+
+mov [result], al 
+
+
+mov eax, 1 
+xor ebx, ebx 
+int 0x80
+
+
+
+#Addition of 8bit
+
+global _start:
+section .text
+_start:
+	mov ax , 30FAH
+	MOV bx , 595BH
+	add ax, bx
+
+ 
+
+#Multiplication of 8bit
+
+global _start:
+section .text
+
+_start:
+    mov al, 10     
+    mov bl, 100     
+    mul bl
+
+
+
+#Division of 8bit
+
+global _start:
+section .text
+
+_start:
+    mov ax, 10
+    mov bx,100
+    div al
+
+
+
+#Multiplication using aam
+
+global _start
+section .data
+    val db 0
+    vah db 0
+
+section .text
+_start:
+    mov al,5
+    mov bl,9
+    mul bl
+
+    aam
+    add al,'0'
+    mov [val],al
+    add ah,'0'
+    mov [vah],ah
+
+    mov eax,4
+    mov ebx,1
+    mov ecx,vah
+    mov edx,1
+    int 80h
+
+    mov eax,4
+    mov ebx,1
+    mov ecx,val
+    mov edx,1
+    int 80h
+
+    mov eax,1
+    mov ebx,0
+    int 80h
