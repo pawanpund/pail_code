@@ -184,7 +184,7 @@ _start:
     int 0x80
 
 
-#code for Implementation of Basic Arithmetic Operations on 8086 Microprocessor for 8-bit Hex
+# code for Implementation of Basic Arithmetic Operations on 8086 Microprocessor for 8-bit Hex
 Numbers
 
 section .data
@@ -213,7 +213,7 @@ int 0x80
 
 
 
-#Addition of 8bit
+# Addition of 8bit
 
 global _start:
 section .text
@@ -224,7 +224,7 @@ _start:
 
  
 
-#Multiplication of 8bit
+# Multiplication of 8bit
 
 global _start:
 section .text
@@ -236,7 +236,7 @@ _start:
 
 
 
-#Division of 8bit
+# Division of 8bit
 
 global _start:
 section .text
@@ -248,7 +248,7 @@ _start:
 
 
 
-#Multiplication using aam
+# Multiplication using aam
 
 global _start
 section .data
