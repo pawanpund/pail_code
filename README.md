@@ -282,3 +282,90 @@ _start:
     mov eax,1
     mov ebx,0
     int 80h
+
+
+
+#Array Addition of 8 bit numbers
+
+section .text
+    global _start
+
+_start:
+    mov eax,x
+    mov ebx,0
+    mov ecx,5
+
+top: add ebx, [eax]
+
+    add eax,1
+
+    loop top
+
+done:
+    add ebx, '0'
+    mov [sum], ebx
+
+display:
+    mov edx,1
+    mov ecx, sum
+    mov ebx, 1
+    mov eax, 4
+    int 0x80
+
+    mov eax, 1
+    int 0x80
+
+section .data
+global x
+x:
+    db 1
+    db 2
+    db 3
+    db 1
+    db 2
+
+sum:
+    db 0 , 0xa
+
+
+
+ #Array Addition of 8 bit numbers using AAM
+
+ section .text
+    global _start
+
+_start:
+    mov eax, x
+    mov ebx, 0
+    mov ecx, 5
+
+top: 
+    add bl, [eax]
+    inc eax
+    loop top
+
+    mov al, bl
+    aam
+    add ah, '0'
+    add al, '0'
+    mov [sum], ah
+    mov [sum+1], al
+
+display:
+    mov edx, 3
+    mov ecx, sum
+    mov ebx, 1
+    mov eax, 4
+    int 0x80
+
+    mov eax, 1
+    xor ebx, ebx
+    int 0x80
+
+section .data
+global x
+x:
+    db 1, 2, 3, 1, 2
+
+sum:
+    db 0,0,0xA
