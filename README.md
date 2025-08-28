@@ -285,7 +285,7 @@ _start:
 
 
 
-#Array Addition of 8 bit numbers
+# Array Addition of 8 bit numbers
 
 section .text
     global _start
@@ -329,7 +329,7 @@ sum:
 
 
 
- #Array Addition of 8 bit numbers using AAM
+ # Array Addition of 8 bit numbers using AAM
 
  section .text
     global _start
